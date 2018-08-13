@@ -68,7 +68,7 @@
                   <li class="user-footer">
 
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Cerrar</a>
+                      <a href="{{url('/logout')}}" class="btn btn-default btn-flat">Cerrar</a>
                     </div>
                   </li>
                 </ul>
@@ -159,7 +159,7 @@
                 <!-- /.box-header -->
                 <div class="box-body">
                   	<div class="row">
-	                  	<div class="col-md-12" id="seccionRecargar">
+	                  	<div class="col-md-12">
 		                          <!--Contenido-->
                               @yield('contenido')
 		                          <!--Fin Contenido-->
@@ -188,7 +188,7 @@
       		setInterval(
       				function(){
       					$('#seccionRecargar').load(' #seccionRecargar');
-      				},4000
+      				},6000
       			);
       	});
       </script>

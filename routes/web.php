@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Route ::resource('temperatura/temperatura','TemperaturaController');
+
+Auth::routes();
+
+Route::auth();
+Route::get('/home', 'HomeController@index')->name('home');
