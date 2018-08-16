@@ -9,6 +9,7 @@ use sisSmartGrid\Temperatura;
 use Illuminate\Support\Facades\Redirect;
 use sisSmartGrid\Http\Requests\TemperaturaFormRequest;
 use DB;
+use Exception;
 
 
 class TemperaturaController extends Controller
@@ -28,14 +29,15 @@ class TemperaturaController extends Controller
        $temperaturas = Temperatura::orderBy('id','DESC')
        ->take(1)
        ->get();
-       //->take(1);
        return view('temperatura.temperatura.index', ["temperaturas"=>$temperaturas]);
-       //return view('temperatura.temperatura.index', ["temperaturas"=>$temperaturas,"searchText"=>$query]);
      }
    }
 
-   public function show()
-   {
-
-   }
+   public function muestraHistorico()
+     {
+       $temperaturash = Temperatura::orderBy('id','DESC')
+       ->take(5)
+       ->get();
+       return view('temperatura.temperatura.index', ["temperaturash"=>$temperaturash]);
+     }
 }
